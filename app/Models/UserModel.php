@@ -14,5 +14,5 @@ class UserModel extends Model
 
     //mendaftarkan atribut(nama kolom) yang bisa kita isi ketika melakukan insert/update ke database
     // protected $fillable = ['level_id', 'username', 'nama', 'password'];
-    protected $fillable = ['level_id', 'username', 'nama'];
+    protected $fillable = ['level_id', 'username', 'nama', 'password'];
 }
