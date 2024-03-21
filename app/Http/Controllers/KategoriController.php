@@ -38,12 +38,36 @@ class KategoriController extends Controller
     }
 
     public function store(Request $request)
-{
+    {
     KategoriModel::create([
         'kategori_kode' => $request->kodeKategori, // Menyertakan nilai kategori_kode dari form
         'kategori_nama' => $request->namaKategori,
     ]);
     return redirect('/kategori');
-}
+    }
+    public function edit($id)
+    {
+        $kategori = KategoriModel::find($id);
+        return view('kategori.edit',['data' => $kategori]);
+    }
 
+    public function edit_simpan($id, Request $request)
+    {
+        $kategori = KategoriModel::find($id);
+
+        $kategori->kategori_kode = $request->kodeKategori;
+        $kategori->kategori_nama = $request->namaKategori;
+
+        $kategori->save();
+
+        return redirect('/kategori');
+    }
+
+    public function destroy($id)
+    {
+        $kategori = KategoriModel::find($id);
+        $kategori->delete();
+
+        return redirect('/kategori');
+    }
 }

@@ -315,6 +315,13 @@ return [
             'url' => 'admin/blog',
             'can' => 'manage-blog',
         ],
+        //no 2
+        [
+            'text' => 'Category',
+            'url' => 'kategori',
+            'icon' => 'fas fa-th-large',
+            'label_color' => 'success',
+        ],
         [
             'text' => 'pages',
             'url' => 'admin/pages',
