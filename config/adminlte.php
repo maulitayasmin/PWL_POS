@@ -323,6 +323,18 @@ return [
             'label_color' => 'success',
         ],
         [
+            'text' => 'Manage User',
+            'url' => '/user',
+            'icon' => 'fas fa-th-large',
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'Manage Level',
+            'url' => '/level',
+            'icon' => 'fas fa-th-large',
+            'label_color' => 'success',
+        ],
+        [
             'text' => 'pages',
             'url' => 'admin/pages',
             'icon' => 'far fa-fw fa-file',
