@@ -5,6 +5,9 @@ use App\Models\KategoriModel;
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\DB;
 use App\DataTables\KategoriDataTable;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\View;
 
 // use function PHPUnit\Framework\returnSelf;
 
@@ -32,19 +35,24 @@ class KategoriController extends Controller
         return $dataTable->render('kategori.index');
     }
 
-    public function create()
+    public function create() : View
     {
         return view('kategori.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request) : RedirectResponse
     {
+        $request->validate([
+            'kodeKategori' => 'bail|required|string|max:255',
+            'namaKategori' => 'bail|required|string|max:255',
+        ]);
     KategoriModel::create([
         'kategori_kode' => $request->kodeKategori, // Menyertakan nilai kategori_kode dari form
         'kategori_nama' => $request->namaKategori,
     ]);
     return redirect('/kategori');
     }
+
     public function edit($id)
     {
         $kategori = KategoriModel::find($id);
