@@ -6,8 +6,6 @@ use App\Models\KategoriModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\DataTables\KategoriDataTable;
-// use Illuminate\Http\RedirectResponse;
-// use Illuminate\Support\Facades\Redirect;
 use Yajra\DataTables\Contracts\DataTable;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -78,6 +76,7 @@ class KategoriController extends Controller
             return view('kategori.index', [
                 'breadcrumb' => $breadcrumb,
                 'page' => $page,
+                'kategori' => $kategori,
                 'activeMenu' => $activeMenu
             ]);
         }
