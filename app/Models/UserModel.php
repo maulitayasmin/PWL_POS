@@ -22,14 +22,4 @@ class UserModel extends \Illuminate\Foundation\Auth\User
     public function level(): BelongsTo{
         return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
     }    
-
-    public function stok(): HasMany
-    {
-        return $this->hasMany(StokModel::class, 'user_id', 'user_id');
-    }
-
-    public function transaksi(): HasMany
-    {
-        return $this->hasMany(TransaksiPenjualanModel::class, 'user_id', 'user_id');
-    }
 }
