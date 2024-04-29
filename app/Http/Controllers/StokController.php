@@ -72,7 +72,7 @@ class StokController extends Controller
 
         $request->validate([
 
-            'barang_id' => 'bail|required|max:255',
+            'barang_nama' => 'bail|required|max:255',
             'user_id' => 'bail|required|max:255',
             'stok_tanggal' => 'bail|required|max:255',
             'stok_jumlah' => 'bail|required|max:255',
@@ -81,7 +81,7 @@ class StokController extends Controller
 
         // Membuat data stok baru
         StokModel::create([
-            'barang_id' => $request->barang_id,
+            'barang_nama' => $request->barang_id,
             'user_id' => $request->user_id,
             'stok_tanggal' => $request->stok_tanggal,
             'stok_jumlah' => $request->stok_jumlah,
@@ -118,14 +118,14 @@ class StokController extends Controller
         $request->validate([
             //kategori kode harus didisi, berupa string, minimal 3 karakter,
             //dan bernilai unik ditabel m_kategoris kolom kategori kecuali untuk katgeori dengan id yang sedang diedit
-            'barang_id' => 'bail|required|max:255',
+            'barang_nama' => 'bail|required|max:255',
             'user_id' => 'bail|required|max:255',
             'stok_tanggal' => 'bail|required|max:255',
             'stok_jumlah' => 'bail|required|max:255',
         ]);
 
         StokModel::find($id)->update([
-            'barang_id' => $request->barang_id,
+            'barang.barang_nama' => $request->barang_nama,
             'user_id' => $request->user_id,
             'stok_tanggal' => $request->stok_tanggal,
             'stok_jumlah' => $request->stok_jumlah,

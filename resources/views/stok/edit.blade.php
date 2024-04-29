@@ -18,10 +18,10 @@
                     @csrf
                     {!! method_field('PUT') !!} <!-- tambahkan baris ini untuk proses edit yang butuh method PUT -->
                     <div class="form-group row">
-                        <label class="col-1 control-label col-form-label">ID Barang</label>
+                        <label class="col-1 control-label col-form-label">Nama Barang</label>
                         <div class="col-11">
-                            <input type="number" class="form-control" id="barang_id" name="barang_id" value="{{ old('id_barang', $stok->barang_id) }}" required>
-                            @error('barang_id')
+                            <input type="text" class="form-control" id="barang_nama" name="barang_nama" value="{{ old('barang_nama', $stok->barang_nama) }}" required>
+                            @error('barang_nama')
                                 <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>

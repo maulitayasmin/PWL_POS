@@ -15,8 +15,8 @@
             @else
                 <table class="table table-bordered table-striped table-hover table-sm">
                     <tr>
-                        <th>ID_Barang</th>
-                        <td>{{ $stok->barang_id }}</td>
+                        <th>Nama_Barang</th>
+                        <td>{{ $stok->barang_nama }}</td>
                     </tr>
                     <tr>
                         <th> ID_User</th>
