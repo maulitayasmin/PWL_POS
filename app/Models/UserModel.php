@@ -18,6 +18,6 @@ class UserModel extends Authenticatable implements JWTSubject
     }
 
     protected $table ='m_user';
-    protected $primarykey ='user_id';
+    protected $primaryKey ='user_id';
     protected $fillable =['level_id','username','nama','password'];
 }
