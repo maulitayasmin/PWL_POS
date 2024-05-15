@@ -23,12 +23,12 @@ class BarangModel extends Model
         'image'
     ];
 
-    protected function image(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($image) => url('/storage/posts/' . $image),
-        );
-    }
+    // protected function image(): Attribute
+    // {
+    //     return Attribute::make(
+    //         get: fn ($image) => url('/storage/posts/' . $image),
+    //     );
+    // }
 
     public function kategori(): BelongsTo
     {
